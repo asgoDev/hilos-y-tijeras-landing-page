@@ -1,0 +1,118 @@
+/*/////////////////////////// NOTA ////////////////////////////// */
+/* Basado en la Metodologia BEM. Las clases generales tienen como elemento padre un <section>, y los modificadores vienen dados por el -id- de dicho section */
+
+/* Generales */
+
+/* Font-family: Montserrat */
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900);
+
+:root {
+  --wine: #461c26;
+  --light-gray: #d9d9d9;
+  --dark-gray: #686868;
+  --pink: #d2848b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", monospace;
+  font-size: 14px;
+  color: var(--light-gray);
+}
+
+body {
+  background: var(--wine);
+  color: var(--dark-gray);
+}
+
+/*///////////////////////  HEADER ////////////////////// */
+
+.header {
+  display: none;
+}
+
+/* ///////////////////////MAIN /////////////// */
+
+.highlights {
+  color: var(--pink);
+  font-weight: bold;
+}
+
+.main__section {
+  height: 100vh;
+  display: flex;
+  justify-items: end;
+}
+
+/* Elementos Generales */
+
+.section__title {
+  font-size: 6rem;
+  font-weight: 700;
+  min-width: max-content;
+ margin: 2rem;
+  letter-spacing: 3px;
+}
+
+.section__p {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  margin-bottom: 7px;
+}
+
+.button-link {
+  display: block;
+  width: 60%;
+  padding: 10px;
+  margin: 0 2rem;
+  transform: translateY(100%);
+  background-color: var(--wine);
+  border: 2px solid var(--light-gray);
+}
+
+
+/* ///////// HOME //////// */
+
+.section__video-container--home {
+  background: cornsilk;
+  position: relative;
+  flex-grow: 3;
+}
+
+.section__video--home {
+  width: 100%;
+  height: 100%;
+ object-fit: cover;
+}
+
+.section__info-container {
+  max-width: 600px;
+  width: 45%;
+  transform: translate(-20%);
+  flex-grow: 1;
+  align-self: center;
+}
+
+.section__title--home {
+  color: var(--pink);
+  text-shadow: 2px 2px 3px#686868;
+  transform: translateX(-20%);
+}
+
+.section__p--home {
+  background-color: var(--light-gray);
+  max-width: 700px;
+}
+
+
+
+
+
+
+/* /////////// MEDIA QUERIES ////////////// */
