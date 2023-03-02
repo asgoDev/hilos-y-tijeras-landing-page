@@ -11,7 +11,10 @@
   --wine: #461c26;
   --light-gray: #d9d9d9;
   --dark-gray: #686868;
-  --pink: #d2848b;
+  --pink: #D98890;
+  /* --pink: #d2848b; */
+
+  
 }
 
 * {
@@ -29,7 +32,8 @@ html {
 body {
   background: var(--wine);
   /* color: var(--dark-gray); */
-  color: black
+  color: black;
+  user-select: none
 }
 
 /*///////////////////////  HEADER ////////////////////// */
@@ -39,18 +43,22 @@ body {
 /* ///////////////////////MAIN /////////////// */
 
 .highlights {
-  color: var(--pink);
+  /* color: var(--pink); */
+  color: white;
   font-weight: bold;
+  text-shadow: 0 0 5px var(--pink);
 }
 
 .main__section {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: stretch;
   overflow-y: hidden;
+  /* z-index: 0; */
 }
 
-/* Elementos Generales */
+/*/////////// Elementos Generales //////////////7*/
 
 /* .section__title {
   font-size: 6rem;
@@ -74,10 +82,21 @@ body {
 
 }
 
+.opacity-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/hyt-logo.png);
+  background-size: 70%;
+  background-position: 230%;
+  background-repeat: no-repeat;
+  opacity: .3;
+}
+
 .section__p {
   font-family: 'Montserrat', consolas;
   font-weight: 300;
-  /* display: inline-block; */
+  display: inline-block;
   padding: 5px 10px;
   font-size: 1.2rem;
   margin-bottom: 7px;
@@ -110,25 +129,28 @@ body {
 /* ///////// HOME //////// */
 
 .section__video-container--home {
-  /* height: 100%; */
-  /* position: relative; */
+  background: var(--light-gray);
+  position: relative;
   align-self: stretch;
   flex-grow: 2;
+  z-index: 1;
 }
 
 .section__video--home {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: .8;
 }
 
 .section__info-container {
   max-width: 600px;
   width: 45%;
-
   transform: translate(-20%);
-  flex-grow: 1;
+  /* flex-basis: .45; */
+  /* flex-grow: 1; */
   align-self: center;
+  z-index: 1;
 }
 
 .section__title--home {
@@ -139,9 +161,9 @@ body {
 }
 
 .section__p--home {
-  background-color: rgb(255 255 255 / 0.5);
+  background-color: #d9d9d9bb;
   max-width: 700px;
-
+  color: #333;
 }
 
 .buttons-container {
