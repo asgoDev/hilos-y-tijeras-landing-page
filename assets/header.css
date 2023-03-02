@@ -31,3 +31,12 @@
   text-decoration: none;
   color: white;
 }
+
+/* /////////// MEDIA QUERIES ////////////// */
+
+@media (max-width: 1260px), (max-height: 700px) {
+  .header__menu {
+    height: 100px;
+  }
+}
+
