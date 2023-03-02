@@ -83,9 +83,9 @@ body {
 /* ///////// HOME //////// */
 
 .section__video-container--home {
-  background: cornsilk;
+  box-shadow: 1px 1px 1px white inset;
   position: relative;
-  flex-grow: 3;
+  flex-grow: 2;
 }
 
 .section__video--home {
@@ -97,14 +97,15 @@ body {
 .section__info-container {
   max-width: 600px;
   width: 45%;
-  transform: translate(-20%);
+
+  transform: translate(-20%);  
   flex-grow: 1;
   align-self: center;
 }
 
 .section__title--home {
   color: var(--pink);
-  text-shadow: 2px 2px 3px#686868;
+  text-shadow: 3px 3px 3px black;
   transform: translateX(-20%);
 }
 
@@ -128,3 +129,4 @@ body {
 }
 
 /* /////////// MEDIA QUERIES ////////////// */
+
