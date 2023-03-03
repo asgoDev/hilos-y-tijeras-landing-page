@@ -40,3 +40,10 @@
   }
 }
 
+/* ///////// PORTRAIT ///////// */
+
+@media (orientation: portrait) {
+  .header__menu {
+    display: none;
+  }
+}
