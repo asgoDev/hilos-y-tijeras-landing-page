@@ -39,6 +39,18 @@
     height: 100px;
   }
 }
+@media (max-width: 990px), (max-height: 550px) {
+  .header__menu {
+    display: none;
+  }
+}
+
+@media (max-height: 380px){
+  .header__logo {
+    width: 110px;
+  }
+}
+
 
 /* ///////// PORTRAIT ///////// */
 
