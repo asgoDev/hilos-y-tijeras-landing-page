@@ -51,6 +51,11 @@
   }
 }
 
+@media (max-height: 320px){
+  .header__logo {
+    width: 90px;
+  }
+}
 
 /* ///////// PORTRAIT ///////// */
 
@@ -58,4 +63,12 @@
   .header__menu {
     display: none;
   }
+
+  @media (max-height: 990px){
+    .header__logo {
+      width: 100px;
+    }
+  }
+
+
 }
