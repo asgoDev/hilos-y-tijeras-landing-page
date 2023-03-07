@@ -39,7 +39,7 @@
     height: 100px;
   }
 }
-@media (max-width: 990px), (max-height: 550px) {
+@media (max-width: 990px), (max-height: 510px) {
   .header__menu {
     display: none;
   }
