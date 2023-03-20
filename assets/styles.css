@@ -11,7 +11,7 @@
   --wine: #461c26;
   --light-gray: #d9d9d9;
   --dark-gray: #686868;
-  --pink: #d98890;
+  --pink: #f0acb3;
   /* --pink: #d2848b; */
   --white: #ffffff;
   --dark-font: #333;
@@ -40,7 +40,7 @@ body {
 
 /*///////////////////////  HEADER ////////////////////// */
 
-@import url(./header.css);
+/* @import url(./header.css); */
 
 /* ///////////////////////MAIN /////////////// */
 
@@ -55,8 +55,12 @@ body {
   position: relative;
   height: 100vh;
   display: flex;
+  
+  overflow: hidden;
+}
+
+.main__section--home {
   align-items: stretch;
-  /* overflow: hidden; */
 }
 
 /*/////////// Elementos Generales //////////////7*/
@@ -523,6 +527,5 @@ body {
   }
 }
 
-/* correccion para canaima */
 
 

@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="./assets/icons/mfglabs_iconset.css">
     <link rel="stylesheet" href="./assets/styles.css" />
     <link rel="stylesheet" href="./assets/header.css" />
+    <link rel="stylesheet" href="./assets/work.css" />
+    
 
     <title>Bienvenido a Hilos y Tijeras</title>
   </head>
@@ -21,7 +24,7 @@
       />
       <ul class="header__menu flex-container">
         <li class="header__menu-item"><a href="#">Inicio</a></li>
-        <li class="header__menu-item"><a href="#work">Trabajos</a></li>
+        <li class="header__menu-item"><a href="#work">Confecciones</a></li>
         <li class="header__menu-item"><a href="#">Contacto</a></li>
       </ul>
     </header>
@@ -77,7 +80,32 @@
           </div>
         </div>
       </section>
-      <section id="work" class="main__section"></section>
+
+
+      <section id="work" class="main__section main__section--work">
+        <div class="work__clothes-menu"></div>
+        <div class="work__gallery">
+          <article class="work__gallery-item i1">
+            <h2 class=" section__title work__title"><span class="fs-letter">C</span>onfecciones</h2>
+          </article>
+          <article class="work__gallery-item i2">
+            <div class="work__social-container">
+              <div class="work__follow">¡Siguenos!</div>
+              <i class="icon-facebook"></i>
+              <i class="icon-instagram"></i>
+              <i class="icon-cloud"></i>
+            </div>
+          </article>
+          <article class="work__gallery-item i3"></article>
+          <article class="work__gallery-item i4 work__gallery-item--image-a"></article>
+          <article class="work__gallery-item i5 work__gallery-item--image-b">
+            <div class="gallery__buttons-container">
+              <button class="gallery__button gallery__buttons--up">1</button>
+              <button class="gallery__button gallery__buttons--down">2</button>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
     <script src="./assets/main.js"></script>
   </body>
