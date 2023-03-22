@@ -1,12 +1,51 @@
-.work__clothes-menu {
+.work__clothes-menu-container {
   flex-basis: 10%;
   min-width: 135px;
   background: var(--white);
+  box-shadow: 0 0 10px black;
+  z-index: 3;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.work__clothes-menu {
+  width: 100%;
+  list-style: none;
+}
+
+.clothes-menu__item {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  transition: all .5s ease-in-out;
+}
+
+.clothes-menu__item:hover {
+  background: var(--pink);
+  color: white;
+}
+
+.clothes-menu__category {
+  min-width: max-content;
+}
+
+.clothes-menu__category-ico {
+  display: inline-block;
+  width: 135px;
+  /* line-height: 5rem; */
+  text-align: center;
+}
+
+.clothes-menu__category-tag {
+ margin-left: 2rem;
+
 }
 
 .work__title {
   position: relative;
   transform: translate(2rem, 12vh);
+  color: var(--white);
   z-index: 1;
 }
 
@@ -27,7 +66,7 @@
 }
 
 .i1 {
-	background-color: var(--light-gray);
+	background-color: #ffffffcc;
   min-height: 88%;
 	width: 27%;
 }
@@ -43,7 +82,7 @@
 
 }
 .i4 {
-  min-height: 55%;
+  min-height: 60%;
 }
 .i5 {
 	min-height: 66%;
@@ -59,11 +98,11 @@
 }
 
 .work__gallery-item--image-a {
-  background-image: url(./images/ima.jpg);
+  background-image: url(./pruebas/im1.png);
 }
 
 .work__gallery-item--image-b {
-  background-image: url(./images/ima.jpg);
+  background-image: url(./pruebas/im3.png);
 }
 
 .work__gallery-item > img {
@@ -83,10 +122,17 @@
   text-transform: uppercase;
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
-
+.work__follow {
+  display: none;
+}
+.work__social-link {
+  font-size: 2rem;
+  color: var(--white)
+}
 
 .gallery__buttons-container {
   width: 60px;
@@ -115,6 +161,18 @@
   color: var(--pink);
 }
 
+/* //////////// PC /////////////// */
+
+@media (orientation: landscape) {
+  @media (min-width: 800px) {
+    .clothes-menu__item:hover {
+      width: 300%;
+    }
+  }
+  
+}
+
+
 /* //////////// MOBILE /////////////// */
 
 @media (orientation: portrait) {
@@ -123,8 +181,29 @@
     flex-direction: column-reverse;
   }
 
+  .work__clothes-menu-container {
+    flex-basis: content;
+    align-content: end;
+    text-align: center;
+  }
+
   .work__clothes-menu {
-    flex-basis: 70px;
+    display: flex;
+    /* align-items: center; */
+  }
+
+  .clothes-menu__item {
+    padding: 1rem;
+  }
+
+  .clothes-menu__category {
+  }
+  .clothes-menu__category-ico {
+    width: unset;
+  }
+
+  .clothes-menu__category-tag {
+    display: none;
   }
   
   .work__gallery {
@@ -168,7 +247,7 @@
         position: relative;
       }
       .i1 {
-        /* background: gray; */
+        background: none;
         flex-grow: 1;
         order: 3;
         flex-basis: 30%;
