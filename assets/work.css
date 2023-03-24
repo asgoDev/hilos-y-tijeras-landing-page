@@ -87,7 +87,8 @@
 .i5 {
 	min-height: 66%;
 	width: 33%;
-	transform: translateY(23%);
+	/*transform: translateY(23%);*/
+  margin-top: 15vh;
   z-index: 0;
   
 }
@@ -267,7 +268,7 @@
       .i5 {
         /* background: forestgreen; */
         flex-basis: 70%;
-        transform: none;
+        margin-top: unset;
         order: 4;
       }
 

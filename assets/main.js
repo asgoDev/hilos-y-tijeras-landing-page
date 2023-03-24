@@ -1,14 +1,22 @@
-// Velocidad del video
+///////////// GENERAL
 
-let video = document.querySelector('.section__video--home')
+const getElmnt = (elmntClass) => {
+  return document.querySelector(`${elmntClass}`)
+}
+///////////// MAIN SECTION
+
+
+// VIDEO SPEED
+
+let video = getElmnt('.section__video--home')
 video.defaultPlaybackRate = 0.8
 video.load();
 
 ///////// WORK SECTION
 
-const getElmnt = (elmntClass) => {
-  return document.querySelector(`${elmntClass}`)
-}
+
+
+///// Gallery images transition
 
 let imgA = getElmnt('.work__gallery-item--image-a')
 let imgB = getElmnt('.work__gallery-item--image-b')
