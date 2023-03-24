@@ -18,44 +18,45 @@ video.load();
 
 ///// Gallery images transition
 
-let imgA = getElmnt('.work__gallery-item--image-a')
-let imgB = getElmnt('.work__gallery-item--image-b')
 let bntUp = getElmnt('.gallery__button--up')
+let bntDown = getElmnt('.gallery__button--down')
+let galleryCategories = document.querySelectorAll('.clothes-menu__item')
 
+//Control Variables
 let workImagesTransitionDuration = 1500;
-let imgId = 1;
-let limiteSuperior = 5
+let imagesList = [
+  {imgA: 1, imgB: 2},
+  {imgA: 3, imgB: 4},
+  {imgA: 5, imgB: 6},
+  {imgA: 7, imgB: 8},
+  {imgA: 9, imgB: 10}
+];
 
-console.log();
-bntUp.addEventListener('click', ()=> {
-  nextImg()
-}
-)
-// crear la funcion idHandler, que se encargue de aumentar o disminuir el id.  
+let imgId = 0;
+let actualImg = {imgA: 1, imgB: 2};
 
-const nextImg = () => {
-  if(imgId == limiteSuperior){
-    imgId = 1;
+const idImageHandler = (direction) => {
+  if(direction == 'next') {
+    (imgId == imagesList.length - 1) ? imgId = 0 : imgId++;
+  } else if (direction == 'prev') {
+    (imgId == 0) ? imgId = imagesList.length - 1 : imgId--;
+  } else {
+    imgId = direction;
   }
-  imagesAnimation()
-  imgId += 2;
+  return imagesList[imgId];
 }
 
-const imagesAnimation = () => {
-  let actualImgA = imgId;
-  let actualImgB = imgId + 1; 
-  let newImgA = imgId + 2;
-  let newImgB = imgId + 3;
+const imagesAnimation = (prevImg, newImg) => {
+  galleryImageChangeAnimation('.work__gallery-item--image-a', window.innerHeight, prevImg.imgA, newImg.imgA)
+  galleryImageChangeAnimation('.work__gallery-item--image-b', -window.innerHeight, prevImg.imgB, newImg.imgB)
+  actualImg = newImg;
+  }
 
-  galleryImageChangeAnimation('.work__gallery-item--image-a', window.innerHeight, actualImgA, newImgA)
-  galleryImageChangeAnimation('.work__gallery-item--image-b', -window.innerHeight, actualImgB, newImgB)
-}
-
-const galleryImageChangeAnimation = (element, direction, actualImg, newImg) => {
+const galleryImageChangeAnimation = (element, direction, prevImg, newImg) => {
   anime({
     targets: element,
     keyframes: [
-      {backgroundImage: `url(./assets/pruebas/im${actualImg}.png)`, duration: 0},
+      {backgroundImage: `url(./assets/pruebas/im${prevImg}.png)`, duration: 0},
       {translateY: direction, duration: workImagesTransitionDuration / 2, easing: 'easeInElastic(1, .8)'},
       {translateY: -direction, duration: 0},
       {backgroundImage: `url(./assets/pruebas/im${newImg}.png)`, duration: 0},
@@ -64,3 +65,31 @@ const galleryImageChangeAnimation = (element, direction, actualImg, newImg) => {
     loop: false
   });
 }
+
+
+///////////Adding functions to buttons
+
+bntUp.addEventListener('click', ()=> {
+  nextImg();
+}
+)
+
+bntDown.addEventListener('click', () => {
+  prevImg();
+})
+
+    //Add function for each category
+galleryCategories.forEach((category, i) => {
+  category.addEventListener('click', () => {
+    imagesAnimation(actualImg, idImageHandler(i))
+  })
+});
+
+const nextImg = () => {
+  imagesAnimation(actualImg, idImageHandler('next'))
+}
+
+const prevImg = () => {
+  imagesAnimation(actualImg, idImageHandler('prev'))
+}
+
