@@ -85,6 +85,7 @@
   min-height: 60%;
 }
 .i5 {
+  position: relative;
 	min-height: 66%;
 	width: 33%;
 	/*transform: translateY(23%);*/
@@ -103,7 +104,7 @@
 }
 
 .work__gallery-item--image-b {
-  background-image: url(./pruebas/im3.png);
+  background-image: url(./pruebas/im2.png);
 }
 
 .work__gallery-item > img {
@@ -153,12 +154,12 @@
   cursor: pointer;
 }
 
-.gallery__buttons--up {
+.gallery__button--up {
   background-color: var(--pink);
   color: var(--white);
 }
 
-.gallery__buttons--down {
+.gallery__button--down {
   color: var(--pink);
 }
 

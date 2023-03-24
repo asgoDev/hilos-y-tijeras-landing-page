@@ -20,36 +20,45 @@ video.load();
 
 let imgA = getElmnt('.work__gallery-item--image-a')
 let imgB = getElmnt('.work__gallery-item--image-b')
-let tempBtn = getElmnt('.clothes-menu__item')
+let bntUp = getElmnt('.gallery__button--up')
 
 let workImagesTransitionDuration = 1500;
+let imgId = 1;
+let limiteSuperior = 5
 
-tempBtn.addEventListener('click', ()=> {
-  crossImgChangeUp()
-  crossImgChangeDown()
-})
+console.log();
+bntUp.addEventListener('click', ()=> {
+  nextImg()
+}
+)
+// crear la funcion idHandler, que se encargue de aumentar o disminuir el id.  
 
-
-const crossImgChangeUp = () => {
-  anime({
-    targets: '.work__gallery-item--image-a',
-    keyframes: [
-      {backgroundImage: 'url(./assets/pruebas/im1.png)', duration: 0},
-      {translateY: window.innerHeight, duration: workImagesTransitionDuration / 2, easing: 'easeInElastic(1, .8)'},
-      {translateY: -window.innerHeight, duration: 0},
-      {backgroundImage: 'url(./assets/pruebas/im5.png)', duration: 0},
-      {translateY: 0, duration: workImagesTransitionDuration, easing: 'easeOutElastic(1, .8)',}
-    ],
-    loop: false
-  });
+const nextImg = () => {
+  if(imgId == limiteSuperior){
+    imgId = 1;
+  }
+  imagesAnimation()
+  imgId += 2;
 }
 
-const crossImgChangeDown = () => {
+const imagesAnimation = () => {
+  let actualImgA = imgId;
+  let actualImgB = imgId + 1; 
+  let newImgA = imgId + 2;
+  let newImgB = imgId + 3;
+
+  galleryImageChangeAnimation('.work__gallery-item--image-a', window.innerHeight, actualImgA, newImgA)
+  galleryImageChangeAnimation('.work__gallery-item--image-b', -window.innerHeight, actualImgB, newImgB)
+}
+
+const galleryImageChangeAnimation = (element, direction, actualImg, newImg) => {
   anime({
-    targets: '.work__gallery-item--image-b',
+    targets: element,
     keyframes: [
-      {translateY: -window.innerHeight, duration: workImagesTransitionDuration / 2, easing: 'easeInElastic(1, .8)'},
-      {translateY: window.innerHeight, duration: 0},
+      {backgroundImage: `url(./assets/pruebas/im${actualImg}.png)`, duration: 0},
+      {translateY: direction, duration: workImagesTransitionDuration / 2, easing: 'easeInElastic(1, .8)'},
+      {translateY: -direction, duration: 0},
+      {backgroundImage: `url(./assets/pruebas/im${newImg}.png)`, duration: 0},
       {translateY: 0, duration: workImagesTransitionDuration, easing: 'easeOutElastic(1, .8)',}
     ],
     loop: false
