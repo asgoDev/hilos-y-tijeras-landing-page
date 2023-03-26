@@ -33,7 +33,9 @@ let imagesList = [
 ];
 
 let imgId = 0;
-let actualImg = {imgA: 1, imgB: 2};
+let actualImg = imagesList[imgId];
+
+// gallery fx
 
 const idImageHandler = (direction) => {
   if(direction == 'next') {
@@ -47,19 +49,21 @@ const idImageHandler = (direction) => {
 }
 
 const imagesAnimation = (prevImg, newImg) => {
-  galleryImageChangeAnimation('.work__gallery-item--image-a', window.innerHeight, prevImg.imgA, newImg.imgA)
-  galleryImageChangeAnimation('.work__gallery-item--image-b', -window.innerHeight, prevImg.imgB, newImg.imgB)
-  actualImg = newImg;
+  if (imagesList[imgId] != actualImg) {
+    galleryImageChangeAnimation('.work__gallery-item--image-a', window.innerHeight, prevImg.imgA, newImg.imgA)
+    galleryImageChangeAnimation('.work__gallery-item--image-b', -window.innerHeight, prevImg.imgB, newImg.imgB)
+    actualImg = newImg;
+  }
   }
 
 const galleryImageChangeAnimation = (element, direction, prevImg, newImg) => {
   anime({
     targets: element,
     keyframes: [
-      {backgroundImage: `url(./assets/pruebas/im${prevImg}.png)`, duration: 0},
+      {backgroundImage: `url(./assets/images/work/work-gallery-${prevImg}.jpg)`, duration: 0},
       {translateY: direction, duration: workImagesTransitionDuration / 2, easing: 'easeInElastic(1, .8)'},
       {translateY: -direction, duration: 0},
-      {backgroundImage: `url(./assets/pruebas/im${newImg}.png)`, duration: 0},
+      {backgroundImage: `url(./assets/images/work/work-gallery-${newImg}.jpg)`, duration: 0},
       {translateY: 0, duration: workImagesTransitionDuration, easing: 'easeOutElastic(1, .8)',}
     ],
     loop: false

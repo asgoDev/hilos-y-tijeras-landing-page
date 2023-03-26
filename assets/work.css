@@ -100,11 +100,11 @@
 }
 
 .work__gallery-item--image-a {
-  background-image: url(./pruebas/im1.png);
+  background-image: url(./images/work/work-gallery-1.jpg);
 }
 
 .work__gallery-item--image-b {
-  background-image: url(./pruebas/im2.png);
+  background-image: url(./images/work/work-gallery-2.jpg);
 }
 
 .work__gallery-item > img {
@@ -152,6 +152,43 @@
   height: 50%;
   border: none;
   cursor: pointer;
+  position: relative;
+}
+
+.gallery__button:hover {
+opacity: .9;
+}
+
+.gallery__button::before, .gallery__button::after {
+  content: '';
+  width: 2px;
+  position: absolute;
+  border-radius: 25%;
+  /* background: white; */
+  
+}
+
+.gallery__button::before {
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery__button::after {
+  height: 11px;
+  top: 31%;
+  left: 55%;
+  transform: rotate(-45deg);
+  z-index: 6;
+}
+
+.gallery__button--up::before,.gallery__button--up::after {
+  background: var(--white);
+}
+
+.gallery__button--down::before,.gallery__button--down::after {
+  background: var(--pink);
 }
 
 .gallery__button--up {
@@ -160,7 +197,13 @@
 }
 
 .gallery__button--down {
+  background-color: var(--white);
   color: var(--pink);
+  transform: rotate(180deg);
+}
+
+.gallery__button--down > .gallery__button::before{
+  background-color: brown;
 }
 
 /* //////////// PC /////////////// */
@@ -229,7 +272,8 @@
         position: absolute;
         right: 0;
         top: 40%;
-        background-color: gray;
+        background-color: var(--beige);
+        color: var(--dark-font);
       }
 
       .fs-letter {
