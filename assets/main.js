@@ -84,8 +84,9 @@ bntDown.addEventListener('click', () => {
 
     //Add function for each category
 galleryCategories.forEach((category, i) => {
-  category.addEventListener('click', () => {
-    imagesAnimation(actualImg, idImageHandler(i))
+  category.addEventListener('click', (e) => {
+    imagesAnimation(actualImg, idImageHandler(i));
+    // e.target.parentElement.classList.add('clothes-menu__item--active')
   })
 });
 
