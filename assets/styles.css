@@ -486,8 +486,8 @@ body {
       font-size: 3.7rem;
     }
 
-    .section__title--home {
-    }
+    /* .section__title--home {
+    } */
   }
 
   @media (max-height: 790px) {

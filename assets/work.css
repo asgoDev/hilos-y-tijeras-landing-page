@@ -229,6 +229,29 @@ svg {
       width: 315%;
     }
   }
+
+
+  @media (orientation: landscape) {
+    @media (max-height: 500px) {
+  
+      .work__title {
+        font-size: 1.8rem;
+      }
+
+      .work__clothes-menu-container {
+        width: 120px;
+
+      }
+  
+      .clothes-menu__item {
+        padding: .5rem 0;
+      }
+
+      .clothes-menu__category-ico {
+        width: 120px;
+      }
+    }
+  } 
 }
 
 /* //////////// MOBILE /////////////// */
