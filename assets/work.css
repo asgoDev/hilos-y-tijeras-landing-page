@@ -113,17 +113,17 @@ svg {
 }
 
 .work__gallery-item--image-a {
-  background-image: url(./images/work/work-gallery-1.jpg);
+  background-image: url(./images/work/work-gallery-1.webp);
 }
 
 .work__gallery-item--image-b {
-  background-image: url(./images/work/work-gallery-2.jpg);
+  background-image: url(./images/work/work-gallery-2.webp);
 }
 
 /* .work__gallery-item > img {
   width: 100%;
   height: 100%;
-  background: url(./images/ima.jpg);
+  background: url(./images/ima.webp);
    background-position: top;
   object-fit: cover;
   object-position: center; 
@@ -240,7 +240,7 @@ svg {
 
       .work__clothes-menu-container {
         width: 120px;
-
+        z-index: 5;
       }
   
       .clothes-menu__item {

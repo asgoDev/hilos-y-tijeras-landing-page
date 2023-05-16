@@ -68,7 +68,7 @@ const galleryImageChangeAnimation = (element, direction, prevImg, newImg) => {
     targets: element,
     keyframes: [
       {
-        backgroundImage: `url(./assets/images/work/work-gallery-${prevImg}.jpg)`,
+        backgroundImage: `url(./assets/images/work/work-gallery-${prevImg}.webp)`,
         duration: 0,
       },
       {
@@ -78,7 +78,7 @@ const galleryImageChangeAnimation = (element, direction, prevImg, newImg) => {
       },
       { translateY: -direction, duration: 0 },
       {
-        backgroundImage: `url(./assets/images/work/work-gallery-${newImg}.jpg)`,
+        backgroundImage: `url(./assets/images/work/work-gallery-${newImg}.webp)`,
         duration: 0,
       },
       {
