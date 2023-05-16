@@ -14,6 +14,10 @@
   width: 130px;
 }
 
+.burguer-menu {
+  display: none;
+}
+
 .header__menu {
   position: relative;
   z-index: 10;
@@ -42,18 +46,86 @@
   }
 }
 @media (max-width: 990px), (max-height: 510px) {
+  .header {
+    align-items: center;
+    z-index: 5;
+  } 
   .header__menu {
     display: none;
+    background: #461c26f1;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: unset;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .burguer-menu {
+    position: relative;
+    z-index: 11;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 2rem;
+  }
+  .display-menu {
+    display: flex;
+  }
+
+  .zindex-menu {
+    z-index: 6;
+    
+  }
+
+  .header__menu-item {
+    font-size: 2.4rem;
+    padding: 1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  .burguer-menu {
+    position: relative;
+    z-index: 11;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 2rem;
+  }
+
+  .burguer-menu::after, .burguer-menu::before, .burguer-menu__span  {
+    background: white;
+    content: "";
+    position: absolute;
+    left: 0;
+    height:  .3rem;
+    width: 100%;
+  }
+
+  .burguer-menu::before {
+    top: 0;
+  }
+
+  .burguer-menu__span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .burguer-menu::after {
+    bottom: 0;
   }
 }
 
-@media (max-height: 380px){
+@media (max-height: 380px) {
   .header__logo {
     width: 110px;
   }
 }
 
-@media (max-height: 320px){
+@media (max-height: 320px) {
   .header__logo {
     width: 90px;
   }
@@ -62,15 +134,82 @@
 /* ///////// PORTRAIT ///////// */
 
 @media (orientation: portrait) {
+  .header {
+    align-items: center;
+    z-index: 5;
+  }
   .header__menu {
-    display: none;
+    background: #461c26f1;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: unset;
+    height: 100vh;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
   }
 
-  @media (max-height: 990px){
+  .display-menu {
+    display: flex;
+  }
+
+  .zindex-menu {
+    z-index: 6;
+    
+  }
+
+  .header__menu-item {
+    font-size: 2.4rem;
+    padding: 1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  .burguer-menu {
+    position: relative;
+    z-index: 11;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 2rem;
+  }
+
+  .burguer-menu::after, .burguer-menu::before, .burguer-menu__span  {
+    background: white;
+    /* border-radius: 3px; */
+    content: "";
+    position: absolute;
+    left: 0;
+    height:  .3rem;
+    width: 100%;
+  }
+
+  .burguer-menu::before {
+    top: 0;
+  }
+
+  .burguer-menu__span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .burguer-menu::after {
+    bottom: 0;
+  }
+  
+
+  @media (max-height: 990px) {
     .header__logo {
       width: 100px;
     }
   }
 
-
+  @media (max-width: 450px) {
+    .burguer-menu {
+      width: 35px;
+      height: 35px;
+    }
+  }
 }
