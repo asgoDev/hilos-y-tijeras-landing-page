@@ -1,10 +1,13 @@
+// const anime = require('animejs');
+
 ///////////// GENERAL
+
 
 ///////SERVICE WORKER
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
       // Service Worker registrado exitosamente
       console.log('Service Worker registrado con alcance:', registration.scope);
     }, function(err) {
@@ -51,6 +54,12 @@ let imagesList = [
 
 let imgId = 0;
 let actualImg = imagesList[imgId];
+
+// precarga
+
+// const preCharge = () =>{
+
+// }
 
 // gallery fx
 
