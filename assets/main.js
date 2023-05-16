@@ -1,5 +1,25 @@
 ///////////// GENERAL
 
+///////SERVICE WORKER
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+      // Service Worker registrado exitosamente
+      console.log('Service Worker registrado con alcance:', registration.scope);
+    }, function(err) {
+      // Error al registrar el Service Worker
+      console.log('Error al registrar el Service Worker:', err);
+    });
+  });
+}
+
+
+
+////////////
+
+
+
 const getElmnt = (elmntClass) => {
   return document.querySelector(`${elmntClass}`);
 };
