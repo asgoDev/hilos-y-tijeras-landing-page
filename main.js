@@ -42,7 +42,7 @@ let bntUp = getElmnt(".gallery__button--up");
 let bntDown = getElmnt(".gallery__button--down");
 let galleryCategories = document.querySelectorAll(".clothes-menu__item");
 
-//Control Variables
+// Control Variables
 let workImagesTransitionDuration = 1500;
 let imagesList = [
   { imgA: 1, imgB: 2 },
@@ -54,14 +54,6 @@ let imagesList = [
 
 let imgId = 0;
 let actualImg = imagesList[imgId];
-
-// precarga
-
-// const preCharge = () =>{
-
-// }
-
-// gallery fx
 
 const idImageHandler = (direction) => {
   if (direction == "next") {
@@ -93,34 +85,15 @@ const imagesAnimation = (prevImg, newImg) => {
 };
 
 const galleryImageChangeAnimation = (element, direction, prevImg, newImg) => {
-  anime({
-    targets: element,
-    keyframes: [
-      {
-        backgroundImage: `url(./assets/images/work/work-gallery-${prevImg}.webp)`,
-        duration: 0,
-      },
-      {
-        translateY: direction,
-        duration: workImagesTransitionDuration / 2,
-        easing: "easeInElastic(1, .8)",
-      },
-      { translateY: -direction, duration: 0 },
-      {
-        backgroundImage: `url(./assets/images/work/work-gallery-${newImg}.webp)`,
-        duration: 0,
-      },
-      {
-        translateY: 0,
-        duration: workImagesTransitionDuration,
-        easing: "easeOutElastic(1, .8)",
-      },
-    ],
-    loop: false,
-  });
-};
+  const galleryItem = document.querySelector(element);
+  galleryItem.style.backgroundImage = `url(/assets/images/work/work-gallery-${prevImg}.webp)`;
+  galleryItem.style.transform = `translateY(${direction}px)`;
 
-///////////Adding functions to buttons
+  setTimeout(() => {
+    galleryItem.style.backgroundImage = `url(/assets/images/work/work-gallery-${newImg}.webp)`;
+    galleryItem.style.transform = "translateY(0)";
+  }, workImagesTransitionDuration / 2);
+};
 
 bntUp.addEventListener("click", () => {
   nextImg();
@@ -130,11 +103,9 @@ bntDown.addEventListener("click", () => {
   prevImg();
 });
 
-//Add function for each category
 galleryCategories.forEach((category, i) => {
   category.addEventListener("click", (e) => {
     imagesAnimation(actualImg, idImageHandler(i));
-    // e.target.parentElement.classList.add('clothes-menu__item--active')
   });
 });
 
@@ -145,6 +116,7 @@ const nextImg = () => {
 const prevImg = () => {
   imagesAnimation(actualImg, idImageHandler("prev"));
 };
+
 
 ///////////// Burguer menu ////////////
 
