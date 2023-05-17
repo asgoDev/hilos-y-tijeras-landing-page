@@ -24,7 +24,7 @@ self.addEventListener("install", function (event) {
         "/assets/images/contact/work-gallery (6).webp",
         "/assets/images/contact/work-gallery (10).webp",
         "/assets/images/contact/work-gallery (11).webp",
-        "/assets/images/contact/work-gallery (12).webp",
+        "/assets/images/contact/work-gallery (12).webp"
       ]);
     })
   );
@@ -37,7 +37,7 @@ self.addEventListener("fetch", function (event) {
         console.log('Respuesta encontrada en la caché');
         return response;
       } else {
-        fetch(event.request)
+        return fetch(event.request);
       }
     })
   );
