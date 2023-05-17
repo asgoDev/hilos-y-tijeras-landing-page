@@ -86,11 +86,11 @@ const imagesAnimation = (prevImg, newImg) => {
 
 const galleryImageChangeAnimation = (element, direction, prevImg, newImg) => {
   const galleryItem = document.querySelector(element);
-  galleryItem.style.backgroundImage = `url(/assets/images/work/work-gallery-${prevImg}.webp)`;
+  galleryItem.style.backgroundImage = `url(./assets/images/work/work-gallery-${prevImg}.webp)`;
   galleryItem.style.transform = `translateY(${direction}px)`;
 
   setTimeout(() => {
-    galleryItem.style.backgroundImage = `url(/assets/images/work/work-gallery-${newImg}.webp)`;
+    galleryItem.style.backgroundImage = `url(./assets/images/work/work-gallery-${newImg}.webp)`;
     galleryItem.style.transform = "translateY(0)";
   }, workImagesTransitionDuration / 2);
 };
